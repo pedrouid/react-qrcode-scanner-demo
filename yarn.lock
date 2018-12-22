@@ -85,13 +85,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-webcam@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@types/react-webcam/-/react-webcam-0.3.1.tgz#0d04b26fcb780c93d5914c1f645a66fecb57f9d5"
-  integrity sha512-hAVZQbeG9BPn/jHeq0n7eOEma3woUYIbTj/u6nTusAqHgLX8HG1hqxRIBUvztvhFo7qD3/OTACqajuPm8Ys/EQ==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react@*", "@types/react@^16.7.18":
   version "16.7.18"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.7.18.tgz#f4ce0d539a893dd61e36cd11ae3a5e54f5a48337"

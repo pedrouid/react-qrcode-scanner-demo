@@ -7,3 +7,4 @@ declare module "*.bmp";
 declare module "*.tiff";
 
 declare module "qrcode-reader";
+declare module "react-webcam";

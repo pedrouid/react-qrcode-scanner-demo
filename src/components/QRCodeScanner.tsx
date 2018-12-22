@@ -1,8 +1,10 @@
 import * as React from "react";
 import * as Webcam from "react-webcam";
 import QrCode from "qrcode-reader";
+import { isMobile } from "../utilities";
 
 interface IQRCodeScannerState {
+  mobile: boolean;
   interval: number | null;
 }
 
@@ -14,13 +16,14 @@ interface IQRCodeScannerProps {
 
 class QRCodeScanner extends React.Component<IQRCodeScannerProps> {
   public state: IQRCodeScannerState;
-  public webcam: Webcam | null;
+  public webcam: any;
   public intervalId: any;
   public qr: any;
 
   constructor(props: IQRCodeScannerProps) {
     super(props);
     this.state = {
+      mobile: isMobile(),
       interval: 250
     };
   }
@@ -77,10 +80,13 @@ class QRCodeScanner extends React.Component<IQRCodeScannerProps> {
     return (
       <Webcam
         audio={false}
-        height={350}
-        ref={c => (this.webcam = c)}
-        screenshotFormat="image/jpeg"
         width={350}
+        height={350}
+        ref={(c: any) => (this.webcam = c)}
+        screenshotFormat="image/jpeg"
+        videoConstraints={{
+          facingMode: this.state.mobile ? { exact: "environment" } : "user"
+        }}
       />
     );
   }
